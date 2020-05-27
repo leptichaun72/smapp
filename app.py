@@ -13,7 +13,7 @@ def login():
       return redirect(url_for('dashboard',name = user))
    else:
       user = request.args.get('name')
-      print user
+      print(user)
       return render_template('login.html')
 
 if __name__ == '__main__':
