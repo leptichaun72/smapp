@@ -10,8 +10,7 @@ def index():
 @app.route('/greet', methods=['GET'])
 def greet():
     name = request.args.get('name', 'Guest')
-    msg = f'Hello {name}'
+    msg = f'Hello I am {name}'
     
     return msg, 200, {'Content-Type': 'text/plain; charset=utf-8'}
-
 
