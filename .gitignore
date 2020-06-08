@@ -1,3 +1,5 @@
 #Pyc files
 *.pyc
 
+#Gitpod files
+.gitpod*
