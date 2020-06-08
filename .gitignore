@@ -3,3 +3,6 @@
 
 #Gitpod files
 .gitpod*
+
+#Pycaching
+__pycache__
