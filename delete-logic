@@ -1,0 +1,20 @@
+Virgin Galactic SPCE
+
+Shares 	Price
+25	12.50
+10	16.70
+5	18.00
+15	15.00
+
+Buy
+10	15.25
+
+Sell
+30	19.00
+
+qty
+while qty > 0:
+find highest price #shares
+30 -5 for 18 // qty - highestShares
+del row for where stock id = SPCE and price = 18
+endWhile
