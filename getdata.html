@@ -1,0 +1,52 @@
+<form action="/add" method="post"> 
+  <input name="fqty" placeholder="QTY"><br />
+  <input name="fprice" placeholder="PRICE"><br />
+  <button>Send</button>
+</form>
+<form action="/sell" method="post"> 
+  <input name="sellqty" placeholder="SELL HOW MANY"><br />
+  <button>Sell It</button>
+</form>
+
+<table>
+  <tr>
+    <th>CompanyId</th>
+    <th>Qty</th>
+    <th>Price</th>
+    <th>Deleted</th>
+  </tr>
+  {% for ii in not_del %}
+  <tr>
+    <th>{{ ii.cmpid }}</th>
+    <th>{{ ii.qty }}</th>
+    <th>{{ ii.price }}</th>
+    <th>{{ ii.deleted }}</th>
+  </tr>
+  {% endfor %}
+</table>
+<ul>
+  {% for jj in deleted %}
+  <li>{{ jj.qty }} {{ jj.price }} {{ jj.deleted }}</li>
+  {% endfor %}
+</ul>
+
+<pre>
+func findMaxPrice()
+  sort arr
+  find maxPrice
+  return max Price
+
+get sellQty
+changedlots = [empty]
+
+while(getQty > 0)
+  getmaxPrice
+  find stock of maxPrice
+  update stock of maxPrice
+  append to changedlots
+
+  sellQty = sellQty - qtyOfMaxPrice
+
+show changedlots
+db.session.commit after confirmation
+</pre>
