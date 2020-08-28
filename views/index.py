@@ -4,8 +4,8 @@ primary_bp = Blueprint("primary_blueprint", __name__, template_folder="templates
 
 @primary_bp.route("/")
 def index():
-    return render_template("form.jade")
+    return render_template("index.jade")
 
 @primary_bp.route("/haha")
 def haha():
-    return render_template("form.jade")
+    return primary_bp.send_static_file("test-bootstrap-copy.html") 

@@ -1,0 +1,10 @@
+mixin link(url, text)
+  a(href=url)= text
+
+mixin article(title)
+  .article
+    .article-wrapper
+      h1= title
+
+extends base.jade
+

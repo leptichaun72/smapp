@@ -1,4 +1,9 @@
-extend base
+extend mixins.jade
 
-block header
-  p Landing page
+block my_content
+  +link("www.yahoo.com", "yahoo")
+
+block cool
+  +link("http://github.com", "github")
+  p Amazing article
+  +article("hhello woorld")

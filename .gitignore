@@ -6,3 +6,6 @@
 
 #Pycaching
 __pycache__
+
+#Env dirs
+*env/
