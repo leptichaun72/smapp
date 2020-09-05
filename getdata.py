@@ -11,7 +11,8 @@ from flask import Flask,\
         url_for
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
+# set project root directory as static folder 
+app = Flask(__name__, static_url_path="")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_file
 
@@ -48,20 +49,21 @@ def add():
     return redirect(url_for('index'))
 @app.route('/sell', methods=['POST'])
 def sellit():
+    #Cast from string to integer
     qty_sell = int(request.form['sellqty'])
     while(qty_sell > 0):
         maxPrice = findMaxPrice()
         maxRecord = Stock.query.filter_by(price=maxPrice).first()
         print(maxRecord.qty)
         time.sleep(10)
-        maxRecord.qty = int(maxRecord.qty)
+
         if(qty_sell < maxRecord.qty):
             # setting remaining qty
             maxRecord.qty =  maxRecord.qty - qty_sell
             qty_sell = 0
         else:
             # removing the record
-            qty_sell = qty_sell - maxRecord.qty
+            qty_sell = abs(maxRecord.qty - qty_sell)
             maxRecord.qty = 0
             maxRecord.deleted = 1
             #db.session.delete(maxRecord)
@@ -75,6 +77,9 @@ def sellit():
     #Use bottom entry for non-localhost
     #return redirect(request.referrer)
 
+@app.route("/bootstrap")
+def boot_site():
+    return app.send_static_file("test-bootstrap.html")
 
 # @app.route('/complete/<id>')
 # def complete(id):
