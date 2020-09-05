@@ -72,6 +72,9 @@ def sellit():
     print(db.session.deleted._members)
     time.sleep(10)
     return redirect(url_for('index'))
+    #Use bottom entry for non-localhost
+    #return redirect(request.referrer)
+
 
 # @app.route('/complete/<id>')
 # def complete(id):
