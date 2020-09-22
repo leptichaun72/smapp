@@ -12,19 +12,26 @@ from flask import Flask,\
 from flask_sqlalchemy import SQLAlchemy
 
 # set project root directory as static folder 
-app = Flask(__name__, static_url_path="")
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_file
 
 db = SQLAlchemy(app)
 
-def findMaxPrice():
-    stArr = Stock.query.filter_by(deleted=0).all()
-    print(stArr)
+def find_maxprice():
+    stList = Stock.query.filter_by(deleted=0).all()
+    print(stList)
     arr = []
-    for ii in stArr:
+    for ii in stList:
         arr.append(ii.price)
     return max(arr)
+
+def is_exist(buyprice):
+    stList = Stock.query.filter_by(deleted=0).all()
+    for ii in stList:
+        if(float(ii.price) == buyprice):
+            return True
+    return False
 
 class Stock(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -42,8 +49,14 @@ def index():
     return render_template('getdata.html',not_del=not_deleted, deleted=deleted)
 @app.route('/add', methods=['POST'])
 def add():
-    stock = Stock(qty=request.form['fqty'],price=request.form['fprice'],deleted=False)
-    db.session.add(stock)
+    fprice=float(request.form['fprice'])
+    fqty=int(request.form['fqty'])
+    if(is_exist(fprice)):
+        stock=Stock.query.filter_by(price=fprice).first()
+        stock.qty += fqty 
+    else:
+        stock = Stock(qty=fqty,price=fprice,deleted=False)
+        db.session.add(stock)
     print(stock)
     db.session.commit()
     return redirect(url_for('index'))
@@ -52,7 +65,7 @@ def sellit():
     #Cast from string to integer
     qty_sell = int(request.form['sellqty'])
     while(qty_sell > 0):
-        maxPrice = findMaxPrice()
+        maxPrice = find_maxprice()
         maxRecord = Stock.query.filter_by(price=maxPrice).first()
         print(maxRecord.qty)
         time.sleep(10)

@@ -6,6 +6,10 @@ primary_bp = Blueprint("primary_blueprint", __name__, template_folder="templates
 def index():
     return render_template("index.jade")
 
+@primary_bp.route("/dummy")
+def dummy():
+    return render_template("dummy.jade")
+
 @primary_bp.route("/haha")
 def haha():
     return primary_bp.send_static_file("test-bootstrap-copy.html") 
