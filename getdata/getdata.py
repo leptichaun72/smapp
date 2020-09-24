@@ -12,7 +12,7 @@ from flask import Flask,\
 from flask_sqlalchemy import SQLAlchemy
 
 # set project root directory as static folder 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='../getdata',static_folder='../getdata')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_file
 
@@ -91,7 +91,7 @@ def sellit():
     #return redirect(request.referrer)
 
 @app.route("/bootstrap")
-def boot_site():
+def bootsite():
     return app.send_static_file("test-bootstrap.html")
 
 # @app.route('/complete/<id>')

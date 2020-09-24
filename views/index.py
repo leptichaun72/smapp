@@ -1,4 +1,8 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, \
+                  render_template, \
+                  request, \
+                  redirect, \
+                  url_for
 
 primary_bp = Blueprint("primary_blueprint", __name__, template_folder="templates", static_folder="static", static_url_path="/assets")
 
@@ -10,6 +14,3 @@ def index():
 def dummy():
     return render_template("dummy.jade")
 
-@primary_bp.route("/haha")
-def haha():
-    return primary_bp.send_static_file("test-bootstrap-copy.html") 
