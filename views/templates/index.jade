@@ -1,9 +1,31 @@
 extends mixins.jade
 
-block body
-  +link("www.yahoo.com", "yahoo")
 
-block cool
-  +link("http://github.com", "github")
-  p Amazing article
-  +article("hhello woorld")
+block body
+  style.
+    .swiper-container {
+        width: 55%;
+        xheight: 50%;
+        border: solid orange 2px;
+      }
+    .swiper-slide {
+      xtext-align: center;
+      font-size: 18px;
+      background: #ccf;
+
+      /* Center slide text vertically */
+      display: flex;
+      xjustify-content: center;
+      align-items: center;
+    }
+  +alert("info") hre
+  +link("cars", "yahoo")
+  .swiper-container
+    .swiper-wrapper
+      .swiper-slide
+        pre.
+          gdhh
+          gffhfgh
+          gjjm
+
+      .swiper-slide slide2

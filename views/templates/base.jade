@@ -4,12 +4,15 @@ html
     title Stock Portfolio Tracker
     meta(charset="utf-8")
     link(rel="stylesheet", href="assets/vendor/bootstrap-3.3.7/bootstrap.min.css")
+    link(rel="stylesheet", href="https://swiperjs.com/package/swiper-bundle.min.css")
   body
     block body
-    block foo
+    block dummy
 
     script(src="assets/vendor/bootstrap-3.3.7/jquery.min.js")
     script(src="assets/vendor/bootstrap-3.3.7/bootstrap.min.js")
+    script(src="https://swiperjs.com/package/swiper-bundle.min.js")
     //- script.
       alert("hello world")
-
+    script.
+      var swiper = new Swiper('.swiper-container');

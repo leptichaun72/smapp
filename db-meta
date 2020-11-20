@@ -1,0 +1,14 @@
+desktop metal going public end of q4
+
+tbl stocks
+
+id primary
+name varchar(100)
+ticker varchar(20)
+entry_price double
+exit_price double
+pricetgt_low double
+pricetgt_median double
+pricetgt_high double
+pricetgt_average double
+
