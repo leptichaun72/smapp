@@ -17,3 +17,7 @@ def index():
 def dummy():
     return render_template("dummy.jade")
 
+@primary_bp.route("/pone")
+def pone():
+    return "i am pOnee!!"
+

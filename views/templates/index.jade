@@ -1,12 +1,12 @@
 extends mixins.jade
 
-
 block body
   style.
     .swiper-container {
-        width: 55%;
-        xheight: 50%;
+        width: 95%;
+        xheight: 80%;
         border: solid orange 2px;
+        margin-top: 1em;
       }
     .swiper-slide {
       xtext-align: center;
@@ -18,8 +18,30 @@ block body
       xjustify-content: center;
       align-items: center;
     }
-  +alert("info") hre
-  +link("cars", "yahoo")
+  //- +alert("info")
+
+  nav.navbar.navbar-default
+    .container
+      .navbar-header
+        button.navbar-toggle(
+        data-toggle="collapse"
+        data-target="#myNav"
+        )
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand Smapp App
+      div.collapse.navbar-collapse#myNav
+        ul.nav.navbar-nav
+          li.active
+            a(href="pone") page 1
+          li
+            a(href="assets/404.html") page 2
+          li
+            a page 3
+  .container-fluid(style="border:solid red 1px")
+    h3 yippee yiyi
+    p hey you
   .swiper-container
     .swiper-wrapper
       .swiper-slide
@@ -27,5 +49,5 @@ block body
           gdhh
           gffhfgh
           gjjm
-
       .swiper-slide slide2
+

@@ -1,24 +1,38 @@
 extends base
 
 block dummy
-  button(onclick="javascript:alert('you go')") yay
+  //- button(onclick="javascript:alert('you go')") yay
   nav.navbar.navbar-default
     .container
       .navbar-header
-        a.navbar-brand Website Name
-      ul.navbar-nav.nav
-        li.active
-          a page 1
-        li
-          a page 2
-        li
-          a page 3
+        button.navbar-toggle(
+        data-toggle="collapse"
+        data-target="#myNav"
+        )
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand Smapp App
+      div.collapse.navbar-collapse#myNav
+        ul.nav.navbar-nav
+          li.active
+            a(href="pone") page 1
+          li
+            a(href="assets/404.html") page 2
+          li
+            a page 3
   .container
-    h3 Look a menu
+    h4 Look a menu
     p i am a big blahaja laragraoh lloook at me i can flyyyy
   .navbar.navbar-inverse
     .container
       ul.nav.navbar-nav
+        li 
+          a hey
+        li 
+          a hey
+        li 
+          a hey
         li 
           a hey
         li 

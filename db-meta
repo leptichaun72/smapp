@@ -12,3 +12,12 @@ pricetgt_median double
 pricetgt_high double
 pricetgt_average double
 
+tbl lots
+
+id primary
+stock_id int
+qty double
+price double
+date_created datetime
+date_modified datetime
+
