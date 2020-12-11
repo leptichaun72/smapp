@@ -1,10 +1,15 @@
 desktop metal going public end of q4
 
+tbl brokers
+id primary
+name varchar(25)
+date_created datetime
+
 tbl stocks
 
 id primary
 name varchar(100)
-ticker varchar(20)
+ticker varchar(25)
 entry_price double
 exit_price double
 pricetgt_low double
@@ -20,4 +25,5 @@ qty double
 price double
 date_created datetime
 date_modified datetime
+date_filled datetime
 

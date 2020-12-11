@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config import db_file 
 from views.index import primary_bp
+from models import *
 
 application = Flask(__name__)
 application.config["SQLALCHEMY_DATABASE_URI"] = db_file

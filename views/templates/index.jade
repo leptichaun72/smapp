@@ -4,14 +4,16 @@ block body
   style.
     .swiper-container {
         width: 95%;
-        xheight: 80%;
+        height: 80%;
         border: solid orange 2px;
         margin-top: 1em;
+      background: green;
       }
+    .swiper-wrapper {
+    }
     .swiper-slide {
       xtext-align: center;
       font-size: 18px;
-      background: #ccf;
 
       /* Center slide text vertically */
       display: flex;
@@ -43,11 +45,13 @@ block body
     h3 yippee yiyi
     p hey you
   .swiper-container
-    .swiper-wrapper
+    .swiper-wrapper(
+    style="height:60vh")
+
       .swiper-slide
         pre.
           gdhh
           gffhfgh
           gjjm
-      .swiper-slide slide2
+      .swiper-slide(style="background:yellow") slide2
 
